@@ -1,0 +1,9 @@
+.pane {
+	-fx-padding: 10;
+}
+.flowpane {
+	-fx-hgap: 4;
+}
+.header {
+	-fx-padding: 10;
+}
