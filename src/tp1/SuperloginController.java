@@ -73,8 +73,8 @@ public class SuperloginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        name.setText("hello sexy");
-        pw.setText("lemeilleurpw");
+        name.setText("admin");
+        pw.setText("admin");
         name.requestFocus();
     }
 

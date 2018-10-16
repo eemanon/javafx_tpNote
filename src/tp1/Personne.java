@@ -5,6 +5,11 @@
  */
 package tp1;
 
+import java.util.List;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -21,8 +26,11 @@ class Personne {
     private final StringProperty address2 = new SimpleStringProperty();
     private final StringProperty citypc = new SimpleStringProperty();
     private final StringProperty tel1 = new SimpleStringProperty();
-    private final StringProperty tel2 = new SimpleStringProperty();    
-    private Properties properties = new Properties();
+    private final StringProperty tel2 = new SimpleStringProperty();
+    private StringProperty eye_color = new SimpleStringProperty("marron");
+    private StringProperty hair_color = new SimpleStringProperty("noir");
+    private IntegerProperty hair_lenght = new SimpleIntegerProperty(50);
+    private ListProperty detail = new SimpleListProperty();
 
     public Personne(String login, String pw, String name, String address1, String address2, String tel1, String tel2) {
         this.login.set(login);
@@ -34,8 +42,6 @@ class Personne {
         this.tel2.set(tel2);
     }
 
-    
-    
     public String getLogin() {
         return login.get();
     }
@@ -132,4 +138,52 @@ class Personne {
         return tel2;
     }
 
+
+    public StringProperty eyeColorProperty() {
+        return eye_color;
+    }
+
+    public StringProperty hairColorProperty() {
+        return hair_color;
+    }
+
+    public IntegerProperty hairLenghtProperty() {
+        return hair_lenght;
+    }
+
+    public ListProperty detailProperty() {
+        return detail;
+    }
+
+    public String getEye_color() {
+        return eye_color.getValue();
+    }
+
+    public String getHair_color() {
+        return hair_color.getValue();
+    }
+
+    public Integer getHair_lenght() {
+        return hair_lenght.getValue();
+    }
+
+    public List getDetail() {
+        return detail.getValue();
+    }
+
+    public void setEye_color(StringProperty eye_color) {
+        this.eye_color = eye_color;
+    }
+
+    public void setHair_color(StringProperty hair_color) {
+        this.hair_color = hair_color;
+    }
+
+    public void setHair_lenght(IntegerProperty hair_lenght) {
+        this.hair_lenght = hair_lenght;
+    }
+
+    public void setDetail(ListProperty detail) {
+        this.detail = detail;
+    }
 }
