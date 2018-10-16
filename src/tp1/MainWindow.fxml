@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.MainWindowController">
    <left>
       <GridPane BorderPane.alignment="CENTER">
@@ -32,11 +31,11 @@
             <Label text="Hair Color" />
             <Label text="Eye Color" GridPane.rowIndex="1" />
             <Label text="Hair Length" GridPane.rowIndex="2" />
-            <Label text="Nose Shape" GridPane.rowIndex="3" />
+            <Label text="Details" GridPane.rowIndex="3" />
             <ComboBox id="cmbb_haircolor" fx:id="cmbb_haircolor" prefWidth="150.0" GridPane.columnIndex="1" />
             <ComboBox id="cmbb_eyeColor" fx:id="cmbb_eyeColor" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Slider id="sl_hairLength" fx:id="sl_hairLength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ListView fx:id="lsb_noseShape" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ListView fx:id="lsb_details" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </left>

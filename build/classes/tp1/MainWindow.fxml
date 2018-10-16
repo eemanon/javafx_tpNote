@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tp1.MainWindowController">
+   <left>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Hair Color" />
+            <Label text="Eye Color" GridPane.rowIndex="1" />
+            <Label text="Hair Length" GridPane.rowIndex="2" />
+            <Label text="Details" GridPane.rowIndex="3" />
+            <ComboBox id="cmbb_haircolor" fx:id="cmbb_haircolor" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox id="cmbb_eyeColor" fx:id="cmbb_eyeColor" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Slider id="sl_hairLength" fx:id="sl_hairLength" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ListView fx:id="lsb_details" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </left>
    <center>
-      <Label text="MainWindow" BorderPane.alignment="CENTER">
+      <Canvas height="276.0" width="322.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <Label text="Configure your Avatar" BorderPane.alignment="CENTER">
          <font>
-            <Font size="72.0" />
+            <Font size="48.0" />
          </font>
       </Label>
-   </center>
+   </top>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <bottom>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="60.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btn_reset" mnemonicParsing="false" onAction="#reset" text="Reset" />
+            <Button fx:id="btn_save" mnemonicParsing="false" onAction="#save" text="Save" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </FlowPane>
+   </bottom>
 </BorderPane>

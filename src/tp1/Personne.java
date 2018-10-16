@@ -21,7 +21,8 @@ class Personne {
     private final StringProperty address2 = new SimpleStringProperty();
     private final StringProperty citypc = new SimpleStringProperty();
     private final StringProperty tel1 = new SimpleStringProperty();
-    private final StringProperty tel2 = new SimpleStringProperty();
+    private final StringProperty tel2 = new SimpleStringProperty();    
+    private Properties properties = new Properties();
 
     public Personne(String login, String pw, String name, String address1, String address2, String tel1, String tel2) {
         this.login.set(login);
