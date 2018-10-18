@@ -14,11 +14,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Slider;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -40,6 +43,8 @@ public class MainWindowController implements Initializable {
     private Button btn_save;
     @FXML
     private ListView<String> lsb_details;
+    @FXML
+    private Canvas canvasID;
 
     /**
      * Initializes the controller class.
@@ -62,8 +67,7 @@ public class MainWindowController implements Initializable {
         sl_hairLength.setMajorTickUnit(50);
         sl_hairLength.setMinorTickCount(5);
         sl_hairLength.setBlockIncrement(10);
-        
-        
+
         ObservableList<String> listeDetails = FXCollections.observableArrayList("tatouage", "piercing", "grain de beauté");
         lsb_details.setItems(listeDetails);
         lsb_details.selectionModelProperty().get().setSelectionMode(SelectionMode.MULTIPLE);
@@ -85,7 +89,40 @@ public class MainWindowController implements Initializable {
         contexte.getPersonne().hairLenghtProperty().bind(sl_hairLength.valueProperty());
         /* bin ddu listview ne fonctionne pas
         contexte.getPersonne().detailProperty().bind(lsb_details.getSelectionModel().getSelectedItem());
-        */
+         */
+        contexte.getPersonne().eyeColorProperty().addListener((ob, o, n) -> {
+            System.out.println("test");
+            redraw();
+        });
+    }
+
+    public void redraw() {
+
+        GraphicsContext gc = canvasID.getGraphicsContext2D();
+        gc.setFill(Color.WHITE);
+        gc.clearRect(0, 0, 500, 500);
+        gc.setFill(Color.BLACK);
+        gc.fillRect(100, 100, 100, 100);
+        String col = contexte.getPersonne().getEye_color();
+        System.out.println(col);
+
+        switch (col) {
+            case "marron":
+                gc.setFill(Color.BROWN);
+                break;
+            case "vert":
+                gc.setFill(Color.GREEN);
+                break;
+            case "noir":
+                gc.setFill(Color.BLACK);
+                break;
+            default:
+                gc.setFill(Color.WHITE);
+        }
+        gc.fillOval(110, 120, 20, 20);
+        gc.fillOval(170, 120, 20, 20);
+        gc.setFill(Color.WHITE);
+        gc.fillRoundRect(110, 180, 80, 4, 0, 0);
     }
 
     @FXML
