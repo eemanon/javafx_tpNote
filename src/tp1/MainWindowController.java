@@ -80,18 +80,18 @@ public class MainWindowController implements Initializable {
                }
            }           
         });*/
+        
     }
 
     public void setContexte(ContexteAvatar contexte) {
         this.contexte = contexte;
-        contexte.getPersonne().eyeColorProperty().bind(cmbb_eyeColor.valueProperty());
-        contexte.getPersonne().hairColorProperty().bind(cmbb_haircolor.valueProperty());
-        contexte.getPersonne().hairLenghtProperty().bind(sl_hairLength.valueProperty());
-        /* bin ddu listview ne fonctionne pas
+        cmbb_eyeColor.valueProperty().bindBidirectional(contexte.getPersonne().eyeColorProperty());
+        cmbb_haircolor.valueProperty().bindBidirectional(contexte.getPersonne().hairColorProperty());
+        sl_hairLength.valueProperty().bindBidirectional(contexte.getPersonne().hairLenghtProperty());
+        /* bind du listview ne fonctionne pas
         contexte.getPersonne().detailProperty().bind(lsb_details.getSelectionModel().getSelectedItem());
          */
         contexte.getPersonne().eyeColorProperty().addListener((ob, o, n) -> {
-            System.out.println("test");
             redraw();
         });
     }
@@ -104,7 +104,6 @@ public class MainWindowController implements Initializable {
         gc.setFill(Color.BLACK);
         gc.fillRect(100, 100, 100, 100);
         String col = contexte.getPersonne().getEye_color();
-        System.out.println(col);
 
         switch (col) {
             case "marron":
@@ -115,6 +114,9 @@ public class MainWindowController implements Initializable {
                 break;
             case "noir":
                 gc.setFill(Color.BLACK);
+                break;
+            case "bleu":
+                gc.setFill(Color.BLUE);
                 break;
             default:
                 gc.setFill(Color.WHITE);

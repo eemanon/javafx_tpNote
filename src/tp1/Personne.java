@@ -17,7 +17,7 @@ import javafx.beans.property.StringProperty;
  *
  * @author sebastian-andreas.si
  */
-class Personne {
+public class Personne {
 
     private final StringProperty login = new SimpleStringProperty();
     private final StringProperty password = new SimpleStringProperty();

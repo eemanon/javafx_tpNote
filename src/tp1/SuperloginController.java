@@ -48,14 +48,14 @@ public class SuperloginController implements Initializable {
             try {
                 Stage stage = (Stage) this.name.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Tp1.class.getResource("MainWindow.fxml"));
+                loader.setLocation(Tp1.class.getResource("menu.fxml"));
                 BorderPane rootLayout = (BorderPane) loader.load();
 
-                MainWindowController controller = loader.getController();
+                MenuController controller = loader.getController();
                 ContexteAvatar contexteAvatar = new ContexteAvatar(p);
                 controller.setContexte(contexteAvatar);
 
-                Scene scene = new Scene(rootLayout, 1000, 600);
+                Scene scene = new Scene(rootLayout, 1500, 1000);
 
                 stage.setScene(scene);
                 stage.centerOnScreen();

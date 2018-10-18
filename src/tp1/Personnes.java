@@ -20,8 +20,10 @@ class Personnes {
     }
     public Personnes(){
         this.list = FXCollections.observableArrayList();
-        this.list.add(new Personne("admin","admin", "seb", "5, rue du point", "", "666", "777"));
-        this.list.add(new Personne("lilbastard","bitch", "noname", "6, rue qui pue", "", "123", "456"));
+        this.list.add(new Personne("naruto", "konoa", "Naruto UZUMAKI", "Chez naruto", "", "123456789", "987654321"));
+        this.list.add(new Personne("luffy", "niku", "Monkey D. Luffy", "Sunny Go", "", "147258369", "963852741"));
+        this.list.add(new Personne("admin", "admin", "Jonathan FERNANDO-JOHNSON", "Chez moi", "", "1593574862", "9517532684"));
+
     }
     
     public Personne identification(String login, String pw){
